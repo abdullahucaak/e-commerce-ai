@@ -25,8 +25,23 @@
                     </div>
                     <div class="f-content">
                         <div class="subscription">
-                            <input class="f-input" type="text" placeholder="Email Adress">
-                            <button class="btn f-btn">SUBSCRIBE</button>
+                            <input 
+                                v-model="email" 
+                                class="f-input" 
+                                type="email" 
+                                placeholder="Email Adress"
+                                @keyup.enter="subscribe"
+                            >
+                            <button 
+                                class="btn f-btn"
+                                @click="subscribe"
+                                :disabled="!isValidEmail"
+                            >
+                                SUBSCRIBE
+                            </button>
+                        </div>
+                        <div v-if="subscriptionMessage" :class="['subscription-message', subscriptionStatus]">
+                            {{ subscriptionMessage }}
                         </div>
                     </div>
                 </div>
@@ -90,6 +105,56 @@
         </div>
     </div>
 </template>
+
+<script setup>
+import { ref, computed } from 'vue'
+import axios from 'axios'
+
+const email = ref('')
+const subscriptionMessage = ref('')
+const subscriptionStatus = ref('')
+
+const isValidEmail = computed(() => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email.value)
+})
+
+const subscribe = async () => {
+    if (!isValidEmail.value) {
+        subscriptionMessage.value = 'Lütfen geçerli bir e-posta adresi girin.'
+        subscriptionStatus.value = 'error'
+        return
+    }
+
+    try {
+        // Önce mevcut aboneleri kontrol et
+        const subscribers = await axios.get('http://localhost:3000/subscribers')
+        const isEmailExists = subscribers.data.some(subscriber => subscriber.email === email.value)
+
+        if (isEmailExists) {
+            subscriptionMessage.value = 'Bu e-posta adresi zaten kayıtlı.'
+            subscriptionStatus.value = 'error'
+            return
+        }
+
+        // E-posta adresi kayıtlı değilse yeni kayıt oluştur
+        const response = await axios.post('http://localhost:3000/subscribers', {
+            email: email.value,
+            date: new Date().toISOString()
+        })
+
+        if (response.status === 201) {
+            subscriptionMessage.value = 'Markamıza başarıyla abone oldunuz!'
+            subscriptionStatus.value = 'success'
+            email.value = ''
+        }
+    } catch (error) {
+        subscriptionMessage.value = 'Bir hata oluştu. Lütfen daha sonra tekrar deneyin.'
+        subscriptionStatus.value = 'error'
+        console.error('Abonelik hatası:', error)
+    }
+}
+</script>
 
 <style scoped>
     .footer{
@@ -159,6 +224,24 @@
     /* item-1, item-2, item-3 border-bottom */
     .footer .f-container .f-item:nth-child(-n+3){ /* prototürk */
         border-bottom: 0.5px solid whitesmoke;
+    }
+    .subscription-message {
+        margin-top: 10px;
+        font-size: 0.8rem;
+        text-align: left;
+    }
+
+    .subscription-message.success {
+        color: white;
+    }
+
+    .subscription-message.error {
+        color: #E74646;
+    }
+
+    .f-btn:disabled {
+        opacity: 1;
+        cursor: not-allowed;
     }
 
     @media (min-width: 1171px) and (max-width: 2000px){
@@ -291,8 +374,25 @@
             padding: 10px 9px;
             font-size: 0.7rem;
         }
+        .subscription-message {
+            margin-top: 8px;
+            margin-bottom: 10px;
+            font-size: 0.6rem;
+            text-align: left;
+        }
+
+        .subscription-message.success {
+            color: white;
+        }
+
+        .subscription-message.error {
+            color: #E74646;
+        }
+
+        .f-btn:disabled {
+            opacity: 1;
+            cursor: not-allowed;
+        }
     }
-
-
 
 </style>

@@ -125,7 +125,7 @@
       "name": "SOLID FLUSH",
       "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India.",
       "features": [
-        "Özel harmanlama yöntemiyle haz��rlanan karışım çay",
+        "Özel harmanlama yöntemiyle hazırlanan karışım çay",
         "70 gram: 35+ fincan çay için yeterli (fincan başına 0.50₺)",
         "Dengeli ve yumuşak içimli premium blend"
       ],
@@ -697,6 +697,48 @@
         "securityCode": "654"
       },
       "orderUniqueCode": "d135247e-a892-4891-a787-a257062f1f3a"
+    }
+  ],
+  "subscribers": [
+    {
+      "id": "40c7",
+      "email": "abdullahucaak@gmail.com",
+      "date": "2024-12-28T11:44:21.829Z"
+    },
+    {
+      "id": "4e65",
+      "email": "yasinucaak@gmail.com",
+      "date": "2024-12-28T11:48:30.307Z"
+    },
+    {
+      "id": "457b",
+      "email": "asdfasdf@sdf.com",
+      "date": "2024-12-28T11:48:58.647Z"
+    },
+    {
+      "id": "e4fa",
+      "email": "abdullas@gmail.com",
+      "date": "2024-12-28T11:51:56.748Z"
+    },
+    {
+      "id": "6711",
+      "email": "asyd@sdkjhf.com",
+      "date": "2024-12-28T11:55:11.564Z"
+    },
+    {
+      "id": "aadb",
+      "email": "abdullahucaak@gmail.com",
+      "date": "2024-12-28T11:57:58.042Z"
+    },
+    {
+      "id": "a7de",
+      "email": "abdullahucaak@gmail.com",
+      "date": "2024-12-28T11:58:06.543Z"
+    },
+    {
+      "id": "6353",
+      "email": "abdullahucaak@gmail.co",
+      "date": "2024-12-28T11:59:50.297Z"
     }
   ]
 }
