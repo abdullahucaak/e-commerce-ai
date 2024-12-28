@@ -104,11 +104,11 @@
                         </div>
                     </div>
                     <div class="description">
-                        <p>A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.</p>
+                        <p>{{ currentProduct.description }}</p>
                         <ul>
-                            <li>Certified organic</li>
-                            <li>70 grams: Yields 35+ cups of tea (.40 cents per cup)</li>
-                            <li>100% compostable packaging, including the label and zipper</li>
+                            <li v-for="(feature, index) in currentProduct.features" :key="index">
+                                {{ feature }}
+                            </li>
                         </ul>
                     </div>
                 </div>
