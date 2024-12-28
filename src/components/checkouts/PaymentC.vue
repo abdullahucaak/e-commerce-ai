@@ -213,11 +213,21 @@ const payNow = () =>{
     }
 
     /* delete from json and post to json function */
-    const deleteAndPost = async () =>{
-      localStorage.removeItem('order')
-      post()
-        console.log("orderUniqueCode.value: " + orderUniqueCode.value)
-        router.push({ name: 'final-page', params: { id: orderUniqueCode.value }/* , query: { orderId: newId } */ });
+    const deleteAndPost = async () => {
+        try {
+            localStorage.removeItem('order')
+            const response = await axios.post('http://localhost:3000/completedOrders', productStore.order)
+            console.log('Order completed and added to completedOrders array:', response.data)
+            
+            // Yeni siparişi store'a ekle
+            await productStore.getCompletedOrders()
+            
+            // Yönlendirme yap
+            console.log("orderUniqueCode.value: " + orderUniqueCode.value)
+            router.push({ name: 'final-page', params: { id: orderUniqueCode.value } })
+        } catch (error) {
+            console.error('Error completing order:', error)
+        }
     }
 
     /* delete cartProduct from json */
