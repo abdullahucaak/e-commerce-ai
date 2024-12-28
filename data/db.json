@@ -1,0 +1,379 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "LEMONGRASS + GINGER",
+      "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.",
+      "price": "16.79",
+      "bestSelling": true,
+      "photo": [
+        "product_600x600.webp",
+        "secondary_product_600x600.jpeg",
+        "1.webp",
+        "2.webp"
+      ],
+      "quantity": 1,
+      "totalPrice": null
+    },
+    {
+      "id": 2,
+      "name": "DARJEELING SECOND FLUSH",
+      "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.",
+      "price": "17.00",
+      "bestSelling": true,
+      "photo": [
+        "product_600x600.webp",
+        "secondary_product_600x600.jpeg",
+        "1.webp",
+        "2.webp"
+      ],
+      "quantity": 1,
+      "totalPrice": null
+    },
+    {
+      "id": 3,
+      "name": "ADACAY + GINGER",
+      "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.",
+      "price": "11.99",
+      "bestSelling": true,
+      "photo": [
+        "product_600x600.webp",
+        "secondary_product_600x600.jpeg",
+        "1.webp",
+        "2.webp"
+      ],
+      "quantity": 1,
+      "totalPrice": null
+    },
+    {
+      "id": 4,
+      "name": "KARADENIZ FLUSH",
+      "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.",
+      "price": "17.00",
+      "bestSelling": true,
+      "photo": [
+        "product_600x600.webp",
+        "secondary_product_600x600.jpeg",
+        "1.webp",
+        "2.webp"
+      ],
+      "quantity": 1,
+      "totalPrice": null
+    },
+    {
+      "id": 5,
+      "name": "GREEN TEA + GINGER",
+      "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.",
+      "price": "14.60",
+      "bestSelling": true,
+      "photo": [
+        "product_600x600.webp",
+        "secondary_product_600x600.jpeg",
+        "1.webp",
+        "2.webp"
+      ],
+      "quantity": 1,
+      "totalPrice": null
+    },
+    {
+      "id": 6,
+      "name": "BLACK TEA FLUSH",
+      "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.",
+      "price": "19.59",
+      "bestSelling": true,
+      "photo": [
+        "product_600x600.webp",
+        "secondary_product_600x600.jpeg",
+        "1.webp",
+        "2.webp"
+      ],
+      "quantity": 1,
+      "totalPrice": null
+    },
+    {
+      "id": 7,
+      "name": "SOLID FLUSH",
+      "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.",
+      "price": "17.59",
+      "bestSelling": false,
+      "photo": [
+        "product_600x600.webp",
+        "secondary_product_600x600.jpeg",
+        "1.webp",
+        "2.webp"
+      ],
+      "quantity": 1,
+      "totalPrice": null
+    },
+    {
+      "id": 8,
+      "name": "DARJEELING",
+      "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.",
+      "price": "14.00",
+      "bestSelling": false,
+      "photo": [
+        "assam-black-600x600.webp",
+        "secondary_product_600x600.jpeg",
+        "1.webp",
+        "2.webp"
+      ],
+      "quantity": 1,
+      "totalPrice": null
+    },
+    {
+      "id": 9,
+      "name": "ASSAM BLACK",
+      "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.",
+      "price": "21.00",
+      "bestSelling": false,
+      "photo": [
+        "assam-black-600x600.webp",
+        "secondary_product_600x600.jpeg",
+        "1.webp",
+        "2.webp"
+      ],
+      "quantity": 1,
+      "totalPrice": null
+    },
+    {
+      "id": 10,
+      "name": "SWEET FENNEL + MINT",
+      "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.",
+      "price": "27.79",
+      "bestSelling": false,
+      "photo": [
+        "assam-black-600x600.webp",
+        "secondary_product_600x600.jpeg",
+        "1.webp",
+        "2.webp"
+      ],
+      "quantity": 1,
+      "totalPrice": null
+    },
+    {
+      "id": 11,
+      "name": "HIBISCUS FLOWERS",
+      "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.",
+      "price": "15.79",
+      "bestSelling": false,
+      "photo": [
+        "assam-black-600x600.webp",
+        "secondary_product_600x600.jpeg",
+        "1.webp",
+        "2.webp"
+      ],
+      "quantity": 1,
+      "totalPrice": null
+    },
+    {
+      "id": 12,
+      "name": "FRESH MINT",
+      "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.",
+      "price": "14.89",
+      "bestSelling": false,
+      "photo": [
+        "assam-black-600x600.webp",
+        "secondary_product_600x600.jpeg",
+        "1.webp",
+        "2.webp"
+      ],
+      "quantity": 1,
+      "totalPrice": null
+    },
+    {
+      "id": 13,
+      "name": "CHAMOMILE FLOWERS",
+      "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.",
+      "price": "23.00",
+      "bestSelling": false,
+      "photo": [
+        "assam-black-600x600.webp",
+        "secondary_product_600x600.jpeg",
+        "1.webp",
+        "2.webp"
+      ],
+      "quantity": 1,
+      "totalPrice": null
+    },
+    {
+      "id": 14,
+      "name": "TULSI (INDIAN BASIL)",
+      "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.",
+      "price": "33.00",
+      "bestSelling": true,
+      "photo": [
+        "assam-black-600x600.webp",
+        "secondary_product_600x600.jpeg",
+        "1.webp",
+        "2.webp"
+      ],
+      "quantity": 1,
+      "totalPrice": null
+    },
+    {
+      "id": 15,
+      "name": "MORNING MUG",
+      "description": "A tangy, lemony, and spicy herbal tea that is sourced from organic farms focused on regenerative farming practices in India. The organic ginger is grown in the gardens of the women who pluck our tea to provide them surplus revenue. This delightful, caffeine-free combo is best had on its own, without milk or sweeteners. Brew over the stovetop for 5 minutes to let the flavors fully develop, and then strain into your cup.",
+      "price": "33.59",
+      "bestSelling": true,
+      "photo": [
+        "assam-black-600x600.webp",
+        "secondary_product_600x600.jpeg",
+        "1.webp",
+        "2.webp"
+      ],
+      "quantity": 1,
+      "totalPrice": null
+    }
+  ],
+  "cartProducts": [],
+  "orders": [],
+  "completedOrders": [
+    {
+      "id": 1,
+      "userNote": "FIŞŞŞK",
+      "howDidYouHear": "Facebook",
+      "cartProducts": [
+        {
+          "id": 9,
+          "name": "ASSAM BLACK",
+          "price": "21.00",
+          "photo": "assam-black-600x600.webp",
+          "quantity": 3,
+          "totalPrice": "63.00"
+        },
+        {
+          "id": 8,
+          "name": "DARJEELING",
+          "price": "14.00",
+          "photo": "assam-black-600x600.webp",
+          "quantity": 4,
+          "totalPrice": "56.00"
+        },
+        {
+          "id": 14,
+          "name": "TULSI (INDIAN BASIL)",
+          "price": "33.00",
+          "photo": "assam-black-600x600.webp",
+          "quantity": 6,
+          "totalPrice": "198.00"
+        },
+        {
+          "id": 13,
+          "name": "CHAMOMILE FLOWERS",
+          "price": "23.00",
+          "photo": "assam-black-600x600.webp",
+          "quantity": 16,
+          "totalPrice": "368.00"
+        }
+      ],
+      "shippingInfo": {
+        "email": "alya.uucak@gmail.com",
+        "firstName": "Alya",
+        "lastName": "Uçak",
+        "shippingAddress": "Sarısu Mah. Kıbrıs Caddesi Narin Evleri B/blok No:8 Konyaaltı/Muğla",
+        "country": "turkiye",
+        "zipCode": "06932",
+        "city": "Muğla",
+        "phoneNumber": "+90 545 816 87 44"
+      },
+      "shippingMethod": {
+        "name": "USPS First Class Package",
+        "price": "4.44"
+      },
+      "priceBeforeDiscount": "685.00",
+      "finalPrice": "620.94",
+      "cartInformation": {
+        "cartNumber": "8565 1827 3874 1111",
+        "nameOnCart": "Alya Uçak",
+        "expirationDate": "2024-05-23",
+        "securityCode": "143"
+      },
+      "orderUniqueCode": "39b85d7b-4799-4e23-8c1b-b204ddd48ad8"
+    },
+    {
+      "id": 2,
+      "userNote": "",
+      "howDidYouHear": "Instagram",
+      "cartProducts": [
+        {
+          "id": 4,
+          "name": "KARADENIZ FLUSH",
+          "price": "17.00",
+          "photo": "product_600x600.webp",
+          "quantity": 3,
+          "totalPrice": "51.00"
+        }
+      ],
+      "shippingInfo": {
+        "email": "kaan.uucak@gmail.com",
+        "firstName": "Kaan",
+        "lastName": "Uçak",
+        "shippingAddress": "Sarısu Mah. Kıbrıs Caddesi Narin Evleri B/blok No:8 Konyaaltı/Antalya",
+        "country": "turkiye",
+        "zipCode": "06930",
+        "city": "Antalya",
+        "phoneNumber": "+90 545 816 87 97"
+      },
+      "shippingMethod": {
+        "name": "USPS Ground",
+        "price": "9.44"
+      },
+      "priceBeforeDiscount": "51.00",
+      "finalPrice": "55.34",
+      "cartInformation": {
+        "cartNumber": "8565 1827 3874 3837",
+        "nameOnCart": "Kaan Uçak",
+        "expirationDate": "2024-05-30",
+        "securityCode": "654"
+      },
+      "orderUniqueCode": "cfc380d3-110d-44fd-9038-abda9a6a8d96"
+    },
+    {
+      "id": 3,
+      "userNote": "bang",
+      "howDidYouHear": "Instagram",
+      "cartProducts": [
+        {
+          "id": 2,
+          "name": "DARJEELING SECOND FLUSH",
+          "price": "17.00",
+          "photo": "product_600x600.webp",
+          "quantity": 2,
+          "totalPrice": "34.00"
+        },
+        {
+          "id": 10,
+          "name": "SWEET FENNEL + MINT",
+          "price": "27.79",
+          "photo": "assam-black-600x600.webp",
+          "quantity": 3,
+          "totalPrice": "83.37"
+        }
+      ],
+      "shippingInfo": {
+        "email": "wilson.uucak@gmail.com",
+        "firstName": "Wilson",
+        "lastName": "Uçak",
+        "shippingAddress": "Sarısu Mah. Kıbrıs Caddesi Narin Evleri B/blok No:8 Konyaaltı/Antalya",
+        "country": "turkiye",
+        "zipCode": "06930",
+        "city": "Antalya",
+        "phoneNumber": "+90 545 816 87 97"
+      },
+      "shippingMethod": {
+        "name": "USPS Ground",
+        "price": "9.44"
+      },
+      "priceBeforeDiscount": "117.37",
+      "finalPrice": "115.07",
+      "cartInformation": {
+        "cartNumber": "8565 1827 3874 3837",
+        "nameOnCart": "Wilson Uçak",
+        "expirationDate": "2024-05-29",
+        "securityCode": "654"
+      },
+      "orderUniqueCode": "be05b5c8-f38c-4253-83d7-1415bdcd4449"
+    }
+  ]
+}
