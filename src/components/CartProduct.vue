@@ -22,7 +22,15 @@
         </td>
         <td>
             <div class="cart-quantity">
-                <input disabled v-model="cartProduct.quantity" class="cart-quantity-input" type="number" min="1" step="1">
+                <input 
+                    v-model.number="cartProduct.quantity" 
+                    @input="updatePrice" 
+                    @click="$event.target.select()"
+                    class="cart-quantity-input" 
+                    type="number" 
+                    min="1" 
+                    step="1"
+                >
             </div>
         </td>
         <td>
@@ -30,7 +38,15 @@
                 <span class="cart-item-regular-price">${{ cartProduct.totalPrice }}</span>
             </div>
             <div class="cart-quantity">
-                <input disabled v-model="cartProduct.quantity" class="cart-quantity-input q-input-smart-phone" type="number" min="1" step="1">
+                <input 
+                    v-model.number="cartProduct.quantity" 
+                    @input="updatePrice" 
+                    @click="$event.target.select()"
+                    class="cart-quantity-input q-input-smart-phone" 
+                    type="number" 
+                    min="1" 
+                    step="1"
+                >
             </div>
         </td>
     </tr>
@@ -40,13 +56,25 @@
 import { useProductStore } from '../stores/productStore'
 const productStore = useProductStore()
 
-
 const props = defineProps({
     cartProduct:{
         type: Object,
         required: false,
     }
 })
+
+const updatePrice = () => {
+    // Quantity'nin 1'den küçük olmasını engelle
+    if (props.cartProduct.quantity < 1) {
+        props.cartProduct.quantity = 1
+    }
+    
+    // Toplam fiyatı güncelle
+    props.cartProduct.totalPrice = Number(props.cartProduct.price * props.cartProduct.quantity).toFixed(2)
+    
+    // localStorage'ı güncelle
+    localStorage.setItem('cartProducts', JSON.stringify(productStore.cartProductsLS))
+}
 
 </script>
 <style scoped>

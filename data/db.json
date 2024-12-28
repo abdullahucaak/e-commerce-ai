@@ -614,6 +614,89 @@
       },
       "orderUniqueCode": "84d043c3-7b21-4ce2-934f-93dde8e73ec8",
       "finalPrice": "21.43"
+    },
+    {
+      "id": 8,
+      "userNote": "",
+      "howDidYouHear": "Please Make a Selection",
+      "cartProducts": [
+        {
+          "id": 6,
+          "name": "BLACK TEA FLUSH",
+          "price": "19.59",
+          "photo": "product_600x600.webp",
+          "quantity": 1,
+          "totalPrice": "19.59"
+        }
+      ],
+      "shippingInfo": {
+        "email": "kaan.uucak@gmail.com",
+        "firstName": "Kaan",
+        "lastName": "Uçak",
+        "shippingAddress": "Sarısu Mah. Kıbrıs Caddesi Narin Evleri B/blok No:8 Konyaaltı/Antalya",
+        "country": "turkiye",
+        "zipCode": "06930",
+        "city": "Antalya",
+        "phoneNumber": "+90 545 816 87 97"
+      },
+      "shippingMethod": {
+        "name": "USPS Ground",
+        "price": "9.44"
+      },
+      "cartInformation": {
+        "cartNumber": "8565 1827 3874 3837",
+        "nameOnCart": "Kaan Uçak",
+        "expirationDate": "2024-12-31",
+        "securityCode": "654"
+      },
+      "orderUniqueCode": "7c92b25e-a3dd-42d6-ac4a-6a306aba882e",
+      "finalPrice": "29.03"
+    },
+    {
+      "id": 9,
+      "userNote": "",
+      "howDidYouHear": "Please Make a Selection",
+      "cartProducts": [
+        {
+          "id": 10,
+          "name": "SWEET FENNEL + MINT",
+          "price": "27.79",
+          "photo": "assam-black-600x600.webp",
+          "quantity": 3,
+          "totalPrice": "83.37"
+        },
+        {
+          "id": 11,
+          "name": "HIBISCUS FLOWERS",
+          "price": "15.79",
+          "photo": "assam-black-600x600.webp",
+          "quantity": 1,
+          "totalPrice": "15.79"
+        }
+      ],
+      "shippingInfo": {
+        "email": "yasin.uucak@gmail.com",
+        "firstName": "Yasin",
+        "lastName": "Uçak",
+        "shippingAddress": "Sarısu Mah. Kıbrıs Caddesi Narin Evleri B/blok No:8 Konyaaltı/Antalya",
+        "country": "turkiye",
+        "zipCode": "06930",
+        "city": "Antalya",
+        "phoneNumber": "+90 545 816 87 97"
+      },
+      "shippingMethod": {
+        "name": "USPS Ground",
+        "price": "9.44"
+      },
+      "priceBeforeDiscount": "99.16",
+      "finalPrice": "98.68",
+      "cartInformation": {
+        "cartNumber": "8565 1827 3874 3837",
+        "nameOnCart": "Kaan Uçak",
+        "expirationDate": "2024-12-31",
+        "securityCode": "654"
+      },
+      "orderUniqueCode": "d135247e-a892-4891-a787-a257062f1f3a"
     }
   ]
 }
