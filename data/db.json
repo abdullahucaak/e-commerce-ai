@@ -739,6 +739,19 @@
       "id": "6353",
       "email": "abdullahucaak@gmail.co",
       "date": "2024-12-28T11:59:50.297Z"
+    },
+    {
+      "id": "9c4b",
+      "email": "fuckthat@gmail.com",
+      "date": "2024-12-29T10:49:38.957Z"
+    }
+  ],
+  "admins": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123",
+      "email": "admin@alayatea.com"
     }
   ]
 }
