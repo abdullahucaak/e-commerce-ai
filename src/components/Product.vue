@@ -36,6 +36,7 @@ const props = defineProps({
     height: auto;
     background-size: contain;
     background-repeat: no-repeat;
+    margin-bottom: 3px;
 }
 .product-img-2{
     display: none;
@@ -50,7 +51,7 @@ display: block;
     font-size: 1.05rem;
     text-transform: uppercase;
     margin-top: 5px;
-    font-weight: 700;
+    font-weight: 600;
 }
 @media (max-width: 340px){
     .product-name{

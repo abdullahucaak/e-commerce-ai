@@ -2,7 +2,7 @@
     <div class="form-container">
         <form @submit.prevent="completeForm" class="form">
             <InfoToChange/>
-            <h2>Shipping Method</h2>
+            <div class="title">Shipping Method</div>
             <div class="shipping-method">
                 <label class="shipping-grid" for="option1">
                     <input 
@@ -184,8 +184,9 @@ const previousComponent = () => {
 }
 
 /* FORM CONTENT */
-h1, h2{
-    font-size: 1rem;
+div.title{
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
 .form-container {
@@ -205,7 +206,7 @@ h1, h2{
 .button {
   background-color: #000;
   text-transform: uppercase;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 600;
   display: block;
   color: #fff;
@@ -284,8 +285,8 @@ form .shipping-method .shipping-grid{
 .button {
   background-color: #000;
   text-transform: uppercase;
-  font-size: 0.7rem;
-  font-weight: 500;
+  font-size: 0.6rem;
+  font-weight: 600;
   display: block;
   color: #fff;
   width: 100%;

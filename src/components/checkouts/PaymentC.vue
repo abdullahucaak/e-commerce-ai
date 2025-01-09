@@ -2,7 +2,7 @@
     <div class="form-container">
         <form @submit.prevent="payNow" class="form">
             <InfoToChange/>
-            <h2>Payment</h2>
+            <div class="title">Payment</div>
             <p class="payment-info">All transactions are secure and encrypted.</p>
             <div class="shipping-method">
                 <label class="shipping-grid">
@@ -252,6 +252,11 @@ const payNow = () =>{
 <style scoped>
 
 /* SHIPPING METHOD */
+
+div.title{
+  font-size: 1.1rem;
+  font-weight: 600;
+}
 form .shipping-method{
     border: solid black 1px;
     border-radius: 10px;

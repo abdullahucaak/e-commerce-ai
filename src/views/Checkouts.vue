@@ -393,7 +393,7 @@ h1, h2{
 .main-checkouts .main-inner .inner-right .inner-right-wrapper .total-price-wrapper .tp-right .old-price{
   color: rgb(230, 69, 69);
   text-decoration:line-through;
-  font-weight: bold;
+  font-weight: 500;
   margin-right: 10px;
 }
 

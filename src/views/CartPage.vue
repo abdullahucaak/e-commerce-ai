@@ -3,7 +3,7 @@
     <div class="main">
         <div v-if="productStore.cartProductsLS.length === 0" class="main-inner-cart-empty">
             <div class="mice-inner">
-                <h1>Your Cart</h1>
+                <h1 class="your-cart">Your Cart</h1>
                 <div>Your Cart is Currently Empty</div>
                 <RouterLink :to="{name:'shop'}"><button> CONTINUE SHOPPING </button></RouterLink>
             </div>
@@ -175,6 +175,10 @@ const postOrders = (e) =>{
 .main .main-inner-cart-empty .mice-inner{
     padding: 100px 0;
 }
+.main .main-inner-cart-empty .mice-inner .your-cart{
+    letter-spacing: 3px;
+    font-weight: 500;
+}
 .main .main-inner-cart-empty .mice-inner div{
     margin-top: 20px;
     letter-spacing: 1px;
@@ -330,7 +334,7 @@ const postOrders = (e) =>{
 }
 .main .main-inner .how-did-you-hear .head {
     color: rgba(27, 26, 26, 0.7);
-    font-weight: 700;
+    font-weight: 600;
 }
 .main .main-inner .how-did-you-hear .options select{
     background-color: none;
@@ -348,7 +352,11 @@ const postOrders = (e) =>{
     border-width: 1.5px;
 }
 .subtotal{
-    font-weight: 600;
+    font-weight: 500;
+}
+.continue-shopping{
+    letter-spacing: 0.5px;
+    opacity: 0.8;
 }
 
 @media (max-width: 1200px){
@@ -454,6 +462,10 @@ const postOrders = (e) =>{
     }
     .main .main-inner form .cart-table tbody tr td{
         font-size: 0.7rem;
+    }
+
+    .cart-product-name-wrapper{
+        padding-left: 3px;
     }
 
 }

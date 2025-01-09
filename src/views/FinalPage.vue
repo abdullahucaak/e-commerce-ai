@@ -263,6 +263,7 @@ watch(() => route.params.id, async (newId) => {
 
      .right .card-inner .c-header{
          font-size: 30px;
+         opacity: 0.9;
      }
      .right .card-inner .chosen-product{
          display: grid;
@@ -294,7 +295,7 @@ watch(() => route.params.id, async (newId) => {
      .total-price-wrapper .tp-right .old-price{
          color: rgb(230, 69, 69);
          text-decoration:line-through;
-         font-weight: bold;
+         font-weight: 600;
          margin-right: 10px;
      }
 
@@ -389,13 +390,16 @@ watch(() => route.params.id, async (newId) => {
              margin-bottom: 20px;
          }
      }
-     @media (max-width:500px){
+     @media (max-width:501px){
          .cards-inner{
              width: 100%;
          }
          .card{
              padding: 20px;
              width: 100%;
+
+            box-shadow: 0px 5px 100px rgba(0, 0, 0, 0.1);
+            text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
          }
 
          .c-header div{

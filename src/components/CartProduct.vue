@@ -221,7 +221,7 @@ const updatePrice = () => {
 }
 .main .main-inner .how-did-you-hear p {
     color: rgba(27, 26, 26, 0.7);
-    font-weight: 700;
+    font-weight: 600;
 }
 .main .main-inner .how-did-you-hear .options select{
     background-color: none;
@@ -239,7 +239,7 @@ const updatePrice = () => {
     border-width: 1.5px;
 }
 .cart-item-regular-price{
-    font-weight: 600;
+    font-weight: 500;
 }
 
 @media (max-width: 1200px){
@@ -329,6 +329,9 @@ const updatePrice = () => {
     }
     .main .main-inner form .cart-table tbody tr td{
         font-size: 0.7rem;
+    }
+    .cart-product-name-wrapper{
+        margin-left: 3px;
     }
 }
 

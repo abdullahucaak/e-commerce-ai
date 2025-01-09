@@ -1,7 +1,7 @@
 <template>
   <div class="form-container">
     <form @submit.prevent="completeForm" class="form">
-        <h1>Contact</h1>
+        <div class="title">Contact</div>
         <div class="fields">
             <label 
               class="field"
@@ -23,7 +23,7 @@
             </p>
         </div>
 
-        <h2>Shipping address</h2>
+        <div class="title">Shipping address</div>
         <p><small>Please enter your shipping details.</small></p>
         <div class="fields fields--2">
           <div>
@@ -327,9 +327,6 @@ const completeForm = () => {
 
 <style scoped>
 /* FORM CONTENT */
-h1, h2{
-    font-size: 1.3rem;
-}
 .form-container {
   max-width: 40rem;
   padding: 40px 2rem 0;
@@ -457,6 +454,10 @@ h1, h2{
     border-right: 1px solid;
     transform: rotate(225deg);
     transition: transform 0.3s;
+}
+div.title{
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 @media (max-width: 399px){
   .return-to-cart{
