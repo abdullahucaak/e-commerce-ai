@@ -213,6 +213,7 @@ img.logo{
 .content-header h1 {
     font-size: 1.5rem;
     font-weight: 500;
+    opacity: 0.9;
 }
 
 .stats-grid {
@@ -239,6 +240,7 @@ img.logo{
 
 .stat-info h3 {
     font-size: 0.875rem;
+    font-weight: 500;
     color: #666;
     margin-bottom: 0.5rem;
 }
@@ -258,6 +260,7 @@ img.logo{
 
 .recent-orders h2 {
     font-size: 1.25rem;
+    font-weight: 500;
     margin-bottom: 1rem;
 }
 

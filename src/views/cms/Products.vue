@@ -167,6 +167,7 @@ img.logo {
 .content-header h1 {
     font-size: 1.5rem;
     font-weight: 500;
+    opacity: 0.9;
 }
 
 .add-product-btn {
@@ -198,6 +199,10 @@ img.logo {
     background: white;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-name {
+    opacity: 0.9;
 }
 
 .product-image {
@@ -244,6 +249,7 @@ img.logo {
     gap: 0.25rem;
     font-size: 0.9rem;
     transition: background-color 0.3s;
+    opacity: 0.8;
 }
 
 .edit-btn {
