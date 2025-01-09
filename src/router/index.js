@@ -8,6 +8,7 @@ import FinalPage from '../views/FinalPage.vue'
 import CompletedOrders from '../views/cms/CompletedOrders.vue'
 import LoginPage from '../views/cms/LoginPage.vue'
 import Dashboard from '../views/cms/Dashboard.vue'
+import Products from '../views/cms/Products.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -62,6 +63,12 @@ const router = createRouter({
       path: '/cms/dashboard',
       name: 'admin-dashboard',
       component: Dashboard,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/cms/products',
+      name: 'products',
+      component: Products,
       meta: { requiresAuth: true }
     }
   ],

@@ -8,6 +8,9 @@
                 <RouterLink to="/cms/dashboard" class="nav-link" active-class="active">
                     <i class="fas fa-home"></i> Ana Sayfa
                 </RouterLink>
+                <RouterLink to="/cms/products" class="nav-link" active-class="active">
+                    <i class="fas fa-box"></i> Ürünler
+                </RouterLink>
                 <RouterLink to="/cms/completed-orders" class="nav-link" active-class="active">
                     <i class="fas fa-shopping-cart"></i> Siparişler
                 </RouterLink>
