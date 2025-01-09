@@ -1,32 +1,12 @@
 <template>
     <div class="dashboard">
-        <nav class="dashboard-nav">
-            <div class="logo">
-                <img class="logo" src="../../assets/Alaya-Logo_300x300.jpg" alt="Logo">
-            </div>
-            <div class="nav-links">
-                <RouterLink to="/cms/dashboard" class="nav-link" active-class="active">
-                    <i class="fas fa-home"></i> Ana Sayfa
-                </RouterLink>
-                <RouterLink to="/cms/products" class="nav-link" active-class="active">
-                    <i class="fas fa-box"></i> Ürünler
-                </RouterLink>
-                <RouterLink to="/cms/completed-orders" class="nav-link" active-class="active">
-                    <i class="fas fa-shopping-cart"></i> Siparişler
-                </RouterLink>
-                <button @click="handleLogout" class="logout-btn">
-                    <i class="fas fa-sign-out-alt"></i> Çıkış Yap
-                </button>
-            </div>
-        </nav>
-
+        <Navigation />
         <div class="dashboard-content">
-            <header class="content-header">
+            <div class="content-header">
                 <h1>Tamamlanan Siparişler</h1>
-            </header>
-
+            </div>
             <div class="orders-container">
-                <div v-for="order in completedOrders" :key="order.orderUniqueCode" class="order-card">
+                <div v-for="order in sortedOrders" :key="order.orderUniqueCode" class="order-card">
                     <div class="order-header">
                         <div class="order-number">Sipariş No: {{ order.orderUniqueCode }}</div>
                         <span class="order-date">{{ new Date(order.cartInformation.expirationDate).toLocaleDateString() }}</span>
@@ -44,7 +24,7 @@
                     <div class="order-items">
                         <div class="order-details">Sipariş Detayları</div>
                         <ul>
-                            <li v-for="item in order.cartInformation.items" :key="item.id">
+                            <li v-for="item in order.cartProducts" :key="item.id">
                                 {{ item.name }} - {{ item.quantity }} adet - ${{ item.price }}
                             </li>
                         </ul>
@@ -62,9 +42,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useProductStore } from '../../stores/productStore'
+import Navigation from '../../components/cms/Navigation.vue'
 
 const router = useRouter()
 const productStore = useProductStore()
@@ -80,81 +61,16 @@ onMounted(async () => {
     completedOrders.value = productStore.completedOrders
 })
 
-const handleLogout = () => {
-    localStorage.removeItem('isAdmin')
-    router.push('/cms/login')
-}
+const sortedOrders = computed(() => {
+    return [...completedOrders.value].sort((a, b) => b.id - a.id)
+})
 </script>
 
 <style scoped>
-img.logo {
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.order-details, .order-number{
-}
-.order-number{
-    color: #1B9C85;
-}
-
 .dashboard {
     display: grid;
     grid-template-columns: 250px 1fr;
     min-height: 100vh;
-}
-
-.dashboard-nav {
-    background-color: #1B9C85;
-    color: white;
-    padding: 2rem;
-}
-
-.logo {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.logo img {
-    width: 120px;
-    height: auto;
-}
-
-.nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.nav-link {
-    color: white;
-    text-decoration: none;
-    padding: 0.75rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.nav-link:hover, .nav-link.active {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.nav-link i {
-    margin-right: 0.5rem;
-}
-
-.logout-btn {
-    margin-top: auto;
-    background: none;
-    border: none;
-    color: white;
-    padding: 0.75rem 1rem;
-    cursor: pointer;
-    text-align: left;
-    font-size: 1rem;
-}
-
-.logout-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .dashboard-content {
@@ -193,6 +109,9 @@ img.logo {
     border-bottom: 1px solid #eee;
 }
 
+.order-number {
+    color: #1B9C85;
+}
 
 .order-date {
     color: #666;
@@ -266,31 +185,49 @@ img.logo {
         grid-template-columns: 1fr;
     }
     
-    .dashboard-nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 1rem;
-        z-index: 100;
-    }
-    
-    .logo {
-        display: none;
-    }
-    
-    .nav-links {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    
-    .nav-link span {
-        display: none;
-    }
-    
     .dashboard-content {
         padding: 1rem;
         padding-bottom: 5rem;
+    }
+
+    .content-header {
+        text-align: center;
+    }
+
+    .order-card {
+        padding: 1rem;
+    }
+
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .customer-info p, .shipping-info p {
+        font-size: 0.9rem;
+    }
+
+    .order-total {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .view-details-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-header h1 {
+        font-size: 1.25rem;
+    }
+
+    .order-items li {
+        font-size: 0.9rem;
+        padding: 0.75rem 0;
     }
 }
 </style> 

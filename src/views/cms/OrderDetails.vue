@@ -1,39 +1,18 @@
 <template>
     <div class="dashboard">
-        <nav class="dashboard-nav">
-            <div class="logo">
-                <img class="logo" src="../../assets/Alaya-Logo_300x300.jpg" alt="Logo">
-            </div>
-            <div class="nav-links">
-                <RouterLink to="/cms/dashboard" class="nav-link" active-class="active">
-                    <i class="fas fa-home"></i> Ana Sayfa
-                </RouterLink>
-                <RouterLink to="/cms/products" class="nav-link" active-class="active">
-                    <i class="fas fa-box"></i> Ürünler
-                </RouterLink>
-                <RouterLink to="/cms/completed-orders" class="nav-link" active-class="active">
-                    <i class="fas fa-shopping-cart"></i> Siparişler
-                </RouterLink>
-                <button @click="handleLogout" class="logout-btn">
-                    <i class="fas fa-sign-out-alt"></i> Çıkış Yap
-                </button>
-            </div>
-        </nav>
-
+        <Navigation />
         <div class="dashboard-content">
-            <header class="content-header">
+            <div class="content-header">
                 <div class="header-left">
-                    <button class="back-btn" @click="router.back()">
+                    <button class="back-btn" @click="router.push('/cms/completed-orders')">
                         <i class="fas fa-arrow-left"></i> Geri
                     </button>
-                    <h1>Sipariş Detayı</h1>
+                    <h1>Sipariş Detayları</h1>
                 </div>
-                <div class="order-status">
-                    <span class="status-badge">Tamamlandı</span>
-                </div>
-            </header>
-
-            <div class="order-details-container" v-if="order">
+                <div class="status-badge">Tamamlandı</div>
+            </div>
+            
+            <div v-if="order" class="order-details-container">
                 <div class="order-info-card">
                     <h2>Sipariş Bilgileri</h2>
                     <div class="info-grid">
@@ -42,7 +21,7 @@
                             <p>{{ order.orderUniqueCode }}</p>
                         </div>
                         <div class="info-item">
-                            <label>Sipariş Tarihi</label>
+                            <label>Tarih</label>
                             <p>{{ new Date(order.cartInformation.expirationDate).toLocaleDateString() }}</p>
                         </div>
                         <div class="info-item">
@@ -139,6 +118,7 @@
 import { ref, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useProductStore } from '../../stores/productStore'
+import Navigation from '../../components/cms/Navigation.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -159,11 +139,6 @@ onMounted(async () => {
     }
 })
 
-const handleLogout = () => {
-    localStorage.removeItem('isAdmin')
-    router.push('/cms/login')
-}
-
 const calculateSubtotal = () => {
     if (!order.value?.cartProducts) return '0.00'
     return order.value.cartProducts
@@ -173,68 +148,10 @@ const calculateSubtotal = () => {
 </script>
 
 <style scoped>
-img.logo {
-    border-radius: 50%;
-    object-fit: cover;
-}
-
 .dashboard {
     display: grid;
     grid-template-columns: 250px 1fr;
     min-height: 100vh;
-}
-
-.dashboard-nav {
-    background-color: #1B9C85;
-    color: white;
-    padding: 2rem;
-}
-
-.logo {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.logo img {
-    width: 120px;
-    height: auto;
-}
-
-.nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.nav-link {
-    color: white;
-    text-decoration: none;
-    padding: 0.75rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.nav-link:hover, .nav-link.active {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.nav-link i {
-    margin-right: 0.5rem;
-}
-
-.logout-btn {
-    margin-top: auto;
-    background: none;
-    border: none;
-    color: white;
-    padding: 0.75rem 1rem;
-    cursor: pointer;
-    text-align: left;
-    font-size: 1rem;
-}
-
-.logout-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .dashboard-content {
@@ -399,11 +316,6 @@ h2 {
     font-weight: 500;
 }
 
-.price {
-    color: #1B9C85;
-    font-weight: 500;
-}
-
 .order-summary {
     margin-top: 2rem;
     padding-top: 1.5rem;
@@ -438,46 +350,103 @@ h2 {
         grid-template-columns: 1fr;
     }
     
-    .dashboard-nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 1rem;
-        z-index: 100;
-    }
-    
-    .logo {
-        display: none;
-    }
-    
-    .nav-links {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    
-    .nav-link span {
-        display: none;
-    }
-    
     .dashboard-content {
         padding: 1rem;
         padding-bottom: 5rem;
     }
-    
+
+    .content-header {
+        margin-bottom: 1rem;
+    }
+
+    .header-left {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .order-status {
+        margin-top: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .order-info-card,
+    .customer-info-card,
+    .shipping-info-card,
+    .products-card {
+        padding: 1rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
     .product-item {
         flex-direction: column;
         padding: 1rem;
     }
-    
+
     .product-image {
         width: 100%;
-        height: auto;
-        aspect-ratio: 1/1;
+        height: 200px;
+        margin-bottom: 1rem;
     }
-    
+
+    .product-info {
+        padding: 0;
+    }
+
     .info-row {
-        font-size: 0.9rem;
+        padding: 0.75rem 0;
+    }
+
+    .order-summary {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .back-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .content-header h1 {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .status-badge {
+        width: 100%;
+        text-align: center;
+    }
+
+    .info-item label {
+        font-size: 0.85rem;
+    }
+
+    .info-item p {
+        font-size: 0.95rem;
+    }
+
+    .product-details h3 {
+        font-size: 1.1rem;
+    }
+
+    .summary-row {
+        font-size: 0.95rem;
+    }
+
+    .summary-row.total {
+        font-size: 1.1rem;
     }
 }
 </style> 

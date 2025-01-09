@@ -1,25 +1,6 @@
 <template>
     <div class="dashboard">
-        <nav class="dashboard-nav">
-            <div class="logo">
-                <img class="logo" src="../../assets/Alaya-Logo_300x300.jpg" alt="Logo">
-            </div>
-            <div class="nav-links">
-                <RouterLink to="/cms/dashboard" class="nav-link" active-class="active">
-                    <i class="fas fa-home"></i> Ana Sayfa
-                </RouterLink>
-                <RouterLink to="/cms/products" class="nav-link" active-class="active">
-                    <i class="fas fa-box"></i> Ürünler
-                </RouterLink>
-                <RouterLink to="/cms/completed-orders" class="nav-link" active-class="active">
-                    <i class="fas fa-shopping-cart"></i> Siparişler
-                </RouterLink>
-                <button @click="handleLogout" class="logout-btn">
-                    <i class="fas fa-sign-out-alt"></i> Çıkış Yap
-                </button>
-            </div>
-        </nav>
-        
+        <Navigation />
         <div class="dashboard-content">
             <header class="content-header">
                 <h1>Admin Paneli</h1>
@@ -91,6 +72,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useProductStore } from '../../stores/productStore'
+import Navigation from '../../components/cms/Navigation.vue'
 
 const router = useRouter()
 const productStore = useProductStore()
@@ -105,11 +87,6 @@ onMounted(async () => {
     await productStore.getCompletedOrders()
     completedOrders.value = productStore.completedOrders
 })
-
-const handleLogout = () => {
-    localStorage.removeItem('isAdmin')
-    router.push('/cms/login')
-}
 
 const totalEarnings = computed(() => {
     return completedOrders.value
@@ -130,72 +107,14 @@ const recentOrders = computed(() => {
 </script>
 
 <style scoped>
-
-img.logo{
-    border-radius: 50%;
-    object-fit: cover;
-}
-
 .green{
     color: #1B9C85;
 }
+
 .dashboard {
     display: grid;
     grid-template-columns: 250px 1fr;
     min-height: 100vh;
-}
-
-.dashboard-nav {
-    background-color: #1B9C85;
-    color: white;
-    padding: 2rem;
-}
-
-.logo {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.logo img {
-    width: 120px;
-    height: auto;
-}
-
-.nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.nav-link {
-    color: white;
-    text-decoration: none;
-    padding: 0.75rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.nav-link:hover, .nav-link.active {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.nav-link i {
-    margin-right: 0.5rem;
-}
-
-.logout-btn {
-    margin-top: auto;
-    background: none;
-    border: none;
-    color: white;
-    padding: 0.75rem 1rem;
-    cursor: pointer;
-    text-align: left;
-    font-size: 1rem;
-}
-
-.logout-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .dashboard-content {
@@ -289,31 +208,147 @@ th {
         grid-template-columns: 1fr;
     }
     
-    .dashboard-nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 1rem;
-        z-index: 100;
-    }
-    
-    .logo {
-        display: none;
-    }
-    
-    .nav-links {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    
-    .nav-link span {
-        display: none;
-    }
-    
     .dashboard-content {
         padding: 1rem;
         padding-bottom: 5rem;
+        min-height: 100vh;
+        background-color: #f5f5f5;
+    }
+
+    .content-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .content-header h1 {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .user-info {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .stat-card {
+        padding: 1.25rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .stat-icon {
+        font-size: 1.75rem;
+    }
+
+    .stat-info h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .stat-info p {
+        font-size: 1.25rem;
+    }
+
+    .recent-orders {
+        padding: 1.25rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .recent-orders h2 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        opacity: 0.9;
+    }
+
+    .table-responsive {
+        margin: 0 -1rem;
+        padding: 0 1rem;
+        width: calc(100% + 2rem);
+    }
+
+    table {
+        font-size: 0.9rem;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+    th {
+        background-color: #f8f9fa;
+        padding: 0.75rem 0.5rem;
+        font-weight: 500;
+        color: #666;
+        white-space: nowrap;
+    }
+
+    td {
+        padding: 0.75rem 0.5rem;
+        border-bottom: 1px solid #eee;
+    }
+
+    td:first-child {
+        max-width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    tr:last-child td {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-header h1 {
+        font-size: 1.25rem;
+    }
+
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+
+    .stat-icon {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    .stat-info h3 {
+        font-size: 0.8rem;
+    }
+
+    .stat-info p {
+        font-size: 1.2rem;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -1.25rem;
+        padding: 0 1.25rem;
+    }
+
+    table {
+        min-width: 480px;
+        font-size: 0.85rem;
+    }
+
+    th, td {
+        padding: 0.75rem 0.5rem;
+    }
+
+    td:first-child {
+        max-width: 100px;
     }
 }
 </style> 
