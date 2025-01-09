@@ -2,7 +2,7 @@
     <div class="dashboard">
         <nav class="dashboard-nav">
             <div class="logo">
-                <img src="../../assets/Alaya-Logo_300x300.jpg" alt="Logo">
+                <img class="logo" src="../../assets/Alaya-Logo_300x300.jpg" alt="Logo">
             </div>
             <div class="nav-links">
                 <RouterLink to="/cms/dashboard" class="nav-link" active-class="active">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="stat-info">
                         <h3>Toplam Kazanç</h3>
-                        <p>${{ totalEarnings }}</p>
+                        <p>{{ totalEarnings }}</p>
                     </div>
                 </div>
                 
@@ -73,7 +73,7 @@
                             <tr v-for="order in recentOrders" :key="order.orderUniqueCode">
                                 <td>{{ order.orderUniqueCode }}</td>
                                 <td>{{ order.shippingInfo.firstName }} {{ order.shippingInfo.lastName }}</td>
-                                <td>${{ order.finalPrice }}</td>
+                                <td class="green">${{ order.finalPrice }}</td>
                                 <td>{{ new Date(order.cartInformation.expirationDate).toLocaleDateString() }}</td>
                             </tr>
                         </tbody>
@@ -127,6 +127,15 @@ const recentOrders = computed(() => {
 </script>
 
 <style scoped>
+
+img.logo{
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.green{
+    color: #1B9C85;
+}
 .dashboard {
     display: grid;
     grid-template-columns: 250px 1fr;
@@ -234,7 +243,7 @@ const recentOrders = computed(() => {
 .stat-info p {
     font-size: 1.5rem;
     font-weight: 500;
-    color: #333;
+    color: #1B9C85;
 }
 
 .recent-orders {

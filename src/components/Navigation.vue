@@ -96,9 +96,6 @@
           <li>
             <RouterLink :to="{name:'about-us'}">About Us</RouterLink>
           </li>
-          <li>
-            <RouterLink :to="{name:'completed-orders'}">Siparişler</RouterLink>
-          </li>
         </ul>
       </div>
   </div>
