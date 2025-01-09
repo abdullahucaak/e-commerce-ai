@@ -5,6 +5,7 @@ import ProductPage from '../views/ProductPage.vue'
 import CartPage from '../views/CartPage.vue'
 import Checkouts from '../views/Checkouts.vue'
 import FinalPage from '../views/FinalPage.vue'
+import CompletedOrders from '../views/cms/CompletedOrders.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,6 +45,11 @@ const router = createRouter({
       path: '/final-page/:id',
       name: 'final-page',
       component: FinalPage
+    },
+    {
+      path: '/completed-orders',
+      name: 'completed-orders',
+      component: CompletedOrders
     }
   ],
   /* To open the new page from the top. */
