@@ -124,7 +124,7 @@ const uniqueCustomers = computed(() => {
 
 const recentOrders = computed(() => {
     return [...completedOrders.value]
-        .sort((a, b) => new Date(b.cartInformation.expirationDate) - new Date(a.cartInformation.expirationDate))
+        .sort((a, b) => b.id - a.id)
         .slice(0, 5)
 })
 </script>
