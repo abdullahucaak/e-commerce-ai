@@ -887,5 +887,12 @@
       "email": "asdasd@gmail.com",
       "date": "2025-01-07T14:27:00.052Z"
     }
+  ],
+  "admins": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123"
+    }
   ]
 }

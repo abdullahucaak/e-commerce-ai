@@ -6,6 +6,8 @@ import CartPage from '../views/CartPage.vue'
 import Checkouts from '../views/Checkouts.vue'
 import FinalPage from '../views/FinalPage.vue'
 import CompletedOrders from '../views/cms/CompletedOrders.vue'
+import LoginPage from '../views/cms/LoginPage.vue'
+import Dashboard from '../views/cms/Dashboard.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,7 +35,6 @@ const router = createRouter({
     {
       path: '/about-us',
       name: 'about-us',
-      
       component: () => import('../views/AboutUs.vue')
     },
     {
@@ -47,14 +48,35 @@ const router = createRouter({
       component: FinalPage
     },
     {
-      path: '/completed-orders',
+      path: '/cms/completed-orders',
       name: 'completed-orders',
-      component: CompletedOrders
+      component: CompletedOrders,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/cms/login',
+      name: 'admin-login',
+      component: LoginPage
+    },
+    {
+      path: '/cms/dashboard',
+      name: 'admin-dashboard',
+      component: Dashboard,
+      meta: { requiresAuth: true }
     }
   ],
   /* To open the new page from the top. */
   scrollBehavior(to, from, savedPosition) {
     return { left: 0, top: 0 };
+  }
+})
+
+// Navigation guard
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth && !localStorage.getItem('isAdmin')) {
+    next('/cms/login')
+  } else {
+    next()
   }
 })
 

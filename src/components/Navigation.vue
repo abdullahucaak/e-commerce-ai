@@ -18,9 +18,6 @@
           <li>
             <RouterLink class="nav-item" :to="{name:'about-us'}">About Us</RouterLink>
           </li>
-          <li>
-            <RouterLink class="nav-item" :to="{name:'completed-orders'}">Siparişler</RouterLink>
-          </li>
         </ul>
       </div>
       <div class="shop-search">
